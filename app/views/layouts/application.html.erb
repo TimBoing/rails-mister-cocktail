@@ -14,6 +14,13 @@
 
   <body>
     <%= yield %>
+
+    <div class="fixed-bottom barbooth">
+      <%= link_to new_cocktail_path do %>
+        <i class="fas fa-plus-circle add-button"></i>
+      <% end %>
+    </div>
+
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
   </body>
