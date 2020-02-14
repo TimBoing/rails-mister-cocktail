@@ -2,8 +2,12 @@
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
       <div class="my-card">
-        <% img_placeholder = "https://library.kissclipart.com/20180830/ike/kissclipart-cocktail-png-clipart-cocktail-martini-screwdriver-0320b7841261c238.jpg" %>
-        <div class="my-card-img" style="background-image:url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>')"></div>
+        <% if cocktail.photo.attached? %>
+          <div class="my-card-img" style="background-image:url('<%= cl_image_path cocktail.photo.key %>')"></div>
+          <% puts "I should display the photo with the key : #{cocktail.photo.key}" %>
+        <% else %>
+          <div class="my-card-img" style="background-image:url('<%= @img_placeholder %>')"></div>
+        <% end %>
         <div class="my-card-text">
           <h5 class="card-title"><%= cocktail.name %></h5>
           <p class="card-text"><%= cocktail.description %></p>

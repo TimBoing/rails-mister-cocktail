@@ -2,6 +2,7 @@ class CocktailsController < ApplicationController
   before_action :set_cocktail, only: [:show, :edit, :update, :destroy]
 
   def index
+    @img_placeholder = "https://library.kissclipart.com/20180830/ike/kissclipart-cocktail-png-clipart-cocktail-martini-screwdriver-0320b7841261c238.jpg"
     @cocktails = Cocktail.all
   end
 
