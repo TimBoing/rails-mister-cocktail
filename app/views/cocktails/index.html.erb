@@ -1,11 +1,9 @@
 <div class="container">
-    <%= cl_image_tag("n0hn7igsnz5syldxk9sm",
-      width: 400, height: 300, crop: :fill) %>
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
       <div class="my-card">
         <% img_placeholder = "https://library.kissclipart.com/20180830/ike/kissclipart-cocktail-png-clipart-cocktail-martini-screwdriver-0320b7841261c238.jpg" %>
-        <div class="my-card-img" style="background-image:url('<%= cocktail.image || img_placeholder %>')"></div>
+        <div class="my-card-img" style="background-image:url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>')"></div>
         <div class="my-card-text">
           <h5 class="card-title"><%= cocktail.name %></h5>
           <p class="card-text"><%= cocktail.description %></p>
