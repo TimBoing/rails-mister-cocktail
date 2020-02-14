@@ -4,7 +4,6 @@
       <div class="my-card">
         <% if cocktail.photo.attached? %>
           <div class="my-card-img" style="background-image:url('<%= cl_image_path cocktail.photo.key %>')"></div>
-          <% puts "I should display the photo with the key : #{cocktail.photo.key}" %>
         <% else %>
           <div class="my-card-img" style="background-image:url('<%= @img_placeholder %>')"></div>
         <% end %>
