@@ -1,12 +1,13 @@
 
 <div class="container">
   <div class="cocktail-details">
-    <%= image_tag @cocktail.image, alt: "alttext", class: 'cocktail-details-image' %>
+    <% img_placeholder = "https://library.kissclipart.com/20180830/ike/kissclipart-cocktail-png-clipart-cocktail-martini-screwdriver-0320b7841261c238.jpg" %>
+    <div class="cocktail-details-image" style="background-image:url('<%= @cocktail.image || img_placeholder %>')"></div>
     <div class="cocktail-details-text">
       <h1 class="cocktail-details-name"><%= @cocktail.name %></h1>
-      <p class="cocktail-details-description"></p>
+      <p class="cocktail-details-description"><%= @cocktail.description %></p>
       <p class="cocktail-details-ingredients"></p>
-
+      <%= link_to 'Edit', edit_cocktail_path(@cocktail)  %>
     </div>
   </div>
 </div>

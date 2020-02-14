@@ -1,5 +1,5 @@
 require 'faker'
 
-20.times do
-  puts Faker::Cannabis.brand
+100.times do
+  puts Faker::GreekPhilosophers.quote
 end
